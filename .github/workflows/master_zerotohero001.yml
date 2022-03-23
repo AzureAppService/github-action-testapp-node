@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'zeroToHero001'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5B17B31793084B37BE4574C8E7A0402F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2BB6FF991A74406AA1A53260A46166B7 }}
           package: .

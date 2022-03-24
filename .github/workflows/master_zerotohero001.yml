@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: '6.9.1'
 
       - name: npm install, build, and test
         run: |
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Staging'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -50,7 +50,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'zeroToHero001/staging'
-          slot-name: 'Staging'
-          publish-profile: ${{ secrets.ZEROTOHERO_STAGING }}
+          app-name: 'zeroToHero001'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FCC19D167DA34B92B5F6917C1EE08570 }}
           package: .

@@ -50,7 +50,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'zerotohero001-staging'
+          app-name: 'zeroToHero001-staging'
           slot-name: 'Staging'
           publish-profile: ${{ secrets.ZEROTOHERO_STAGING }}
           package: .
